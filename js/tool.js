@@ -3,7 +3,7 @@ class Tool {
 
   // randomize
 
-  static randomize(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
+  randomize(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
 
   // colorize
 
