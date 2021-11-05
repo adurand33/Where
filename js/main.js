@@ -114,7 +114,7 @@ $('#button7').on('dblclick', function() {
   recolor();
 });
 
-// jquery #10 : when button8 is clicked, hide / show all h2s
+// jquery #10 : when button8 is clicked, hide / show title
 
 $('#button8').click(function() { $('h1').is(':visible') ? $('h1').hide() : $('h1').show(); });
 
