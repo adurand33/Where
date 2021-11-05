@@ -80,7 +80,7 @@ $('#button4').on('click', function() {
     tool.alertize('Machine always wins!');
 });
 
-// jquery #8 : on button6 hovered hide buttons
+// jquery #8 : on button6 hover hide buttons
 
 $('#button6').mouseenter(function() {
 
@@ -90,7 +90,7 @@ $('#button6').mouseenter(function() {
   }
 });
 
-// jquery #9 : when button7 is double clicked randomize colors
+// jquery #9 : on button7 doubleclick randomize colors
 
 $('#button7').on('click', function(e) {
 
@@ -102,7 +102,7 @@ $('#button7').on('dblclick', function() {
   recolor();
 });
 
-// jquery #10 : when button8 is clicked, hide / show title
+// jquery #10 : on button8 click hide / show title
 
 $('#button8').click(function() { $('h1').is(':visible') ? $('h1').hide() : $('h1').show(); });
 
@@ -164,7 +164,7 @@ $('#whereami').is(":visible") && $('#whereami').click(function() {
     goMap(myloc, 16);
   }
 
-  // set default afpa position
+  // set afpa position as default
 
   function error(err) {
 
@@ -172,7 +172,7 @@ $('#whereami').is(":visible") && $('#whereami').click(function() {
 
     goMap(myloc, 16);
   }
-  
+
   // get position
 
   var options = {
@@ -182,7 +182,7 @@ $('#whereami').is(":visible") && $('#whereami').click(function() {
     maximumAge: 0
   };
 
-  // do find location
+  // fetch location
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 });

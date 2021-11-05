@@ -27,10 +27,8 @@ class Tool {
 
     setTimeout(
 
-      function() {
-
-        alert(message);
-      }, time * 1000);
+      function() { alertize(message); }, // dialog
+      time * 1000); // in s
   }
 }
 
