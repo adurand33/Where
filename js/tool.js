@@ -25,9 +25,11 @@ class Tool {
 
   waitize(message, time) {
 
+    console.log(message);
+
     setTimeout(
 
-      function() { alertize(message); }, // dialog
+      function() { window.alert(message); }, // dialog
       time * 1000); // in s
   }
 }
