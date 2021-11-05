@@ -32,7 +32,7 @@ $('#button2').click(function() {
 
 $('#button3').click(function() {
 
-  let count = 1;
+  let i, count = 1;
 
   if (localStorage.getItem('count') === null) {
 
@@ -46,31 +46,19 @@ $('#button3').click(function() {
   switch (count) {
 
   case '1':
-    $('#button1').addClass('mt-5');
-    $('#button3').addClass('mt-5');
-    $('#button5').addClass('mt-5');
-    $('#button7').addClass('mt-5');
+    for (i = 1; i <= 7; i += 2) $('#button' + i).addClass('mt-5');
     count++;
     break;
   case '2':
-    $('#button2').addClass('mt-5');
-    $('#button4').addClass('mt-5');
-    $('#button6').addClass('mt-5');
-    $('#button8').addClass('mt-5');
+    for (i = 2; i <= 8; i += 2) $('#button' + i).addClass('mt-5');
     count++;
     break;
   case '3':
-    $('#button1').removeClass('mt-5');
-    $('#button3').removeClass('mt-5');
-    $('#button5').removeClass('mt-5');
-    $('#button7').removeClass('mt-5');
+    for (i = 1; i <= 7; i += 2) $('#button' + i).removeClass('mt-5');
     count++;
     break;
   case '4':
-    $('#button2').removeClass('mt-5');
-    $('#button4').removeClass('mt-5');
-    $('#button6').removeClass('mt-5');
-    $('#button8').removeClass('mt-5');
+    for (i = 2; i <= 8; i += 2) $('#button' + i).removeClass('mt-5');
     count = 1;
     break;
   }
@@ -160,15 +148,6 @@ $('#whereami').is(":visible") && $('#whereami').click(function() {
 
   let myloc = {lng: -0.5577591288857408, lat: 44.80249614826052}; // afpa
 
-  // get position
-
-  var options = {
-
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  };
-
   // set position success
 
   function success(pos) {
@@ -191,8 +170,19 @@ $('#whereami').is(":visible") && $('#whereami').click(function() {
 
     console.warn(`ERROR(${err.code}): ${err.message}`);
 
-    goMap(myloc);
+    goMap(myloc, 16);
   }
+  
+  // get position
+
+  var options = {
+
+    enableHighAccuracy: true, // huge difference with false
+    timeout: 5000, // 5s
+    maximumAge: 0
+  };
+
+  // do find location
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 });
